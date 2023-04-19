@@ -13,6 +13,11 @@ const server = gateway({
             prefix: "/product",
             target: "http://localhost:8082/",
             hooks: {}
+        },
+        {
+            prefix: "/payment",
+            target: "http://localhost:8083/",
+            hooks: {}
         }
     ]
 });
