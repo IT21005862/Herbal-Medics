@@ -27,6 +27,39 @@ router.post('/login', async (req, res) => {
   }
 })
 
+// Update isApproved field to true for a specific seller 
+router.put('/approveSeller/:id', async (req, res) => {
+  try {
+    const seller = await User.findById(req.params.id);
+    if (!seller) {
+      return res.status(404).json({ message: 'seller not found' });
+    }
+    seller.isApproved = true;
+    await seller.save();
+    res.json(seller);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+// Update isApproved field to false for a specific seller 
+router.put('/rejectSeller/:id', async (req, res) => {
+  try {
+    const seller = await User.findById(req.params.id);
+    if (!seller) {
+      return res.status(404).json({ message: 'seller not found' });
+    }
+    seller.isApproved = false;
+    await seller.save();
+    res.json(seller);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+
 //get user
 
 router.get('/', async (req, res) => {

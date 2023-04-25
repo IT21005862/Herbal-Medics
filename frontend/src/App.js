@@ -4,12 +4,21 @@ import './App.css';
 import {  useSelector } from 'react-redux';
 import Signin from './pages/Signin';
 import Home from './pages/Home';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
 import ScrollToTop from './components/ScrollToTop';
 import SellerSignup from './pages/SellerSignUp';
+import Productperseller from'./components/Productsperseller';
+import AddProduct from './components/AddProduct';
+import SellerDasboard from './pages/SellerDashboard';
+import AdminDasboard from './pages/AdminDashboard';
+import Adminretofallsellers from './components/Adminretofallsellers';
+import AllProductsseller from "./components/AllProducts";
+
 function App() {
   const user = useSelector((state) => state.user);
-console.log(user);
+//   const userid = useSelector((state) => state.user._id);
+// console.log(userid._id);
 
 
 
@@ -31,9 +40,27 @@ console.log(user);
            
  {user && (
   <>
-    
+
+     
+   
  </>
  )}
+
+{user && user.isSeller && (
+  <>
+       <Route path="/seller" element={<Productperseller/>} />
+     <Route path="/addprod" element={<AddProduct/>} />
+      <Route path="/sellallprod" element={<AllProductsseller/>} />
+     <Route path="/sellerdash" element={<SellerDasboard/>} />
+  </>
+)}
+
+{user && user.isAdmin && (
+                        <>
+    <Route path="/admindash" element={<AdminDasboard/>}/>
+    <Route path="/adminretsellall" element={<Adminretofallsellers/>}/>
+                        </>
+)}
       </Routes>
       </BrowserRouter>
     </div>
