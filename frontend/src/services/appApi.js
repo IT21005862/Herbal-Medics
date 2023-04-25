@@ -14,7 +14,7 @@ export const appApi = createApi({
             }),
         }),
 
-        sellersignup: builder.mutation({
+        sellersignup: builder.mutation({ //sellermutation(It21013300)
             query: (user) => ({
                 url: "/seller/signup",
                 method: "POST",
@@ -38,7 +38,7 @@ export const appApi = createApi({
 
 export const {
     useSignupMutation,
-    useSellersignupMutation,
+    useSellersignupMutation, //sellermutation(It21013300)
     useLoginMutation,
 } = appApi;
 

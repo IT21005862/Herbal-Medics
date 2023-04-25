@@ -5,8 +5,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Link1 from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -15,6 +13,11 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+
+//Seller Signup
+//IT21013300
+
 
 function Copyright(props) {
     return (
@@ -75,11 +78,11 @@ console.log(email)
           <Grid item xs={12}>
               <TextField
                autoComplete="given-name"
-               name="Name"
+               name="SellerID"
                required onChange={(e) => setSellerID(e.target.value)}
                fullWidth
                id="tName"
-               label="Name"
+               label="SellerID"
                autoFocus
                value={SellerID} 
              
@@ -88,11 +91,11 @@ console.log(email)
               <Grid item xs={12}>
               <TextField
                autoComplete="given-name"
-               name="Name"
+               name="ShopName"
                required onChange={(e) => setShopName(e.target.value)}
                fullWidth
                id="tName"
-               label="Name"
+               label="ShopName"
                autoFocus
                value={ShopName} 
              
@@ -101,11 +104,11 @@ console.log(email)
             <Grid item xs={12}>
               <TextField
                autoComplete="given-name"
-               name="Name"
+               name="Seller Name"
                required onChange={(e) => setName(e.target.value)}
                fullWidth
                id="tName"
-               label="Name"
+               label="Seller Name"
                autoFocus
                value={name} 
              
@@ -114,11 +117,11 @@ console.log(email)
               <Grid item xs={12}>
               <TextField
                autoComplete="given-name"
-               name="Name"
+               name="Address"
                required onChange={(e) => setAddress(e.target.value)}
                fullWidth
                id="tName"
-               label="Name"
+               label="Address"
                autoFocus
                value={Address} 
              

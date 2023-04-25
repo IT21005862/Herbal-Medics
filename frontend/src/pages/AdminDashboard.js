@@ -1,13 +1,8 @@
 import React from "react";
 import { Container, Nav, Tab, Col, Row } from "react-bootstrap";
-import SellerDasboardcss from "../CSS/Sellerdashboard.css";
-import AddProduct from "../components/AddProduct";
-import Productperseller from "../components/Productsperseller";
-import AllProducts from "../components/AllProducts";
-
-//Seller Dashboard
-//IT21013300
-function SellerDasboard(){
+import AdminApprovalseller from "../components/AdminApprovalseller";
+import Adminretofallseller from "../components/Adminretofallsellers";
+function AdminDash(){
     return(
         <Container>
         <Tab.Container defaultActiveKey="products">
@@ -15,15 +10,13 @@ function SellerDasboard(){
                 <Col sm={3}>
                     <Nav variant="pills" className="flex-column">
                         <Nav.Item>
-                            <Nav.Link eventKey="products">Add Products</Nav.Link>
+                            <Nav.Link eventKey="products">Check All Sellers</Nav.Link>
                          
                         </Nav.Item>
                         <Nav.Item>
-                            <Nav.Link eventKey="productperseller">My Products</Nav.Link>
+                            <Nav.Link eventKey="productperseller">To Be Approved Sellers</Nav.Link>
                         </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link eventKey="allproducts">All Products</Nav.Link>
-                        </Nav.Item>
+                       
                  
                   
                     </Nav>
@@ -31,14 +24,11 @@ function SellerDasboard(){
                 <Col sm={9}>
                     <Tab.Content>
                         <Tab.Pane eventKey="products">
-                     <AddProduct/>
+                        <Adminretofallseller/>
                         </Tab.Pane>
                         <Tab.Pane eventKey="productperseller">
-                            <Productperseller/>
-                        </Tab.Pane>
-                        <Tab.Pane eventKey="allproducts">
-                            <AllProducts/>
-                        </Tab.Pane>
+                          <AdminApprovalseller/>
+                   </Tab.Pane>
                        
                     </Tab.Content>
                 </Col>
@@ -51,4 +41,4 @@ function SellerDasboard(){
     );
 }
 
-export default SellerDasboard;
+export default AdminDash;
