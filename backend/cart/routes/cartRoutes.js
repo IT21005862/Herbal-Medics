@@ -33,6 +33,17 @@ router.route("/viewCart").get((req,res)=>{
     })
 })
 
+router.route("/getitem/:id").get(async(req,res) =>{
+    let itemId = req.params.id;
+    const items = await Item.findById(itemId)
+    .then((item) => {
+        res.status(200).send({status: "Item fetched", item});
+    }).catch((err) =>{
+        console.log(err.message);
+        res.status(500).send({status: "Error with get Items", error: err.message});
+    })
+})
+
 //update cart item
 router.route("/updateCart/:id").put(async(req, res) =>{
     let itemId = req.params.id;

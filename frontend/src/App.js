@@ -1,8 +1,4 @@
 import './App.css';
-<<<<<<< Updated upstream
-import { BrowserRouter as Router, Route} from "react-router-dom"
-import Cart from './components/cart';
-=======
 import {  useSelector } from 'react-redux';
 import Signin from './pages/Signin';
 import Home from './pages/Home';
@@ -17,16 +13,9 @@ import AdminDasboard from './pages/AdminDashboard';
 import Adminretofallsellers from './components/Adminretofallsellers';
 import AllProductsseller from "./components/AllProducts";
 import Cart from "./components/cart";
->>>>>>> Stashed changes
 
 function App() {
   return (
-<<<<<<< Updated upstream
-    <div>
-      <Router>
-        <Cart/>
-      </Router>
-=======
     <div className="App">
            <BrowserRouter>
            <ScrollToTop/>
@@ -65,7 +54,6 @@ function App() {
 )}
       </Routes>
       </BrowserRouter>
->>>>>>> Stashed changes
     </div>
   );
 }

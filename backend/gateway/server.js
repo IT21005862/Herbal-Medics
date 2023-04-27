@@ -27,8 +27,18 @@ const server = gateway({
             hooks: {}
         },
         {
-            prefix: "/cart",
+            prefix: "/cart", //cart
             target: "http://localhost:8078/",
+            hooks: {}
+        },
+        {
+            prefix: "/order", //order
+            target: "http://localhost:8079/",
+            hooks: {}
+        },
+        {
+            prefix: "/feedback", //order
+            target: "http://localhost:8085/",
             hooks: {}
         }
     ]
@@ -41,3 +51,4 @@ server.get('/', (req,res)=> {
 server.start(port).then(server=>{
     console.log("Gateway is running "+port); //console response
 })
+

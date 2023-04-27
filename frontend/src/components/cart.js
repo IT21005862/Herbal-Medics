@@ -6,10 +6,10 @@ function Cart(props) {
 
     const [items, setitems] = useState([])
     // const itemId = (props.match.params.itemId)
-    // const [itemName, setname] = useState("");
-    // const [unitPrice, setprice] = useState("");
-    // const [quantity, setqty] = useState("");
-    // const [total, settotal] = useState("");
+    const [itemName, setname] = useState("");
+    const [unitPrice, setprice] = useState("");
+    const [quantity, setqty] = useState("");
+    const [total, settotal] = useState("");
 
     useEffect(() => {
         function getitems() {
@@ -31,6 +31,17 @@ function Cart(props) {
         setitems(newdata)
     }
 
+    async function selectitem(id) {
+        axios.get(`http://localhost:9001/cart/getitem/${id}`).then(res => {
+
+            setname(res.data.itemName);
+            setprice(res.data.item.unitPrice);
+            setqty(res.data.item.quantity);
+            settotal(res.data.item.total);
+        }).catch((err) => {
+            alert(err.message)
+        })
+    }
     // useEffect(() => {
     //     axios.get("http://localhost:9001/cart/addCart").then(res => {
 
@@ -77,6 +88,7 @@ function Cart(props) {
                                         <td style={{ paddingLeft: "15px"}}>{item.unitPrice}</td>
                                         <td style={{ paddingLeft: "15px"}}>{item.quantity}</td>
                                         <td style={{ paddingLeft: "15px"}}>{item.total}</td>
+                                        <td style={{ paddingLeft: "15px"}}><button className="btn btn-danger" onClick={() => { deleteitem(item._id); }}>Remove</button></td>
                                         <td style={{ paddingLeft: "15px"}}><button className="btn btn-danger" onClick={() => { deleteitem(item._id); }}>Remove</button></td>
                                     </tr>
                                 ))}
