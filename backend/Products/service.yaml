@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: products-deployment
+  labels:
+    app: products
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: products
+  template:
+    metadata:
+      labels:
+        app: products 
+    spec:
+      containers:
+      - name: nodeserver
+        image: nowen321/products:latest
+        ports:
+        - containerPort: 8082
+        
+        
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: products-service
+spec:
+  selector:
+    app: products 
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 5000
+    targetPort: 8082
+    nodePort: 31110
