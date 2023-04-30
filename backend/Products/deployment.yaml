@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nodeapp-deployment
+  name: products-deployment
   labels:
-    app: nodeapp
+    app: products
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nodeapp
+      app: products
   template:
     metadata:
       labels:
-        app: nodeapp 
+        app: products 
     spec:
       containers:
-      - name: nodeserver
+      - name: products
         image: nowen321/products:latest
         ports:
         - containerPort: 8082
