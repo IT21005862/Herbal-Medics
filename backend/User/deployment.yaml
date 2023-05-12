@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: user-deployment
+  name: users-deployment
   labels:
-    app: user
+    app: users
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: user
+      app: users
   template:
     metadata:
       labels:
-        app: user 
+        app: users
     spec:
       containers:
-      - name: nodeserver
-        image: nowen321/user:latest
+      - name: user
+        image: user:latest
         ports:
-       - containerPort: 8081
+        - containerPort: 8081
