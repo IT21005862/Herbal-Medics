@@ -12,10 +12,10 @@ spec:
   template:
     metadata:
       labels:
-        app: products 
+        app: products
     spec:
       containers:
       - name: products
-        image: nowen321/products:latest
+        image: products:latest
         ports:
-        - containerPort: 8082
+        - containerPort: 8070
