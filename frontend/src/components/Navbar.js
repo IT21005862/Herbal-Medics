@@ -19,9 +19,7 @@ function Navbar(){
         <li className="nav-item">
           <a className="nav-link" href="/view">View Order</a>
         </li>
-        <li className="nav-item">
-          <a className="nav-link" href="/update">Update Order</a>
-        </li>
+        
       </ul>
       
     </div>

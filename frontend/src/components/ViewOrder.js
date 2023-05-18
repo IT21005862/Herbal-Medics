@@ -102,13 +102,7 @@ const deleteuser = async (id) => {
 
 }
   
-  
-
-
-
-
-
-    return(
+  return(
 
 //<div>{/* className="container" */}
 
@@ -175,7 +169,7 @@ const deleteuser = async (id) => {
       <td></td>
       <td></td>
       <td className="d-flex justify-content-between">
-      <NavLink to={`/update/${element._id}`}> <button className="btn btn-dark" ><i className="fa-regular fa-pen-to-square"></i></button></NavLink>
+      <NavLink to={`/update/${element._id}`}> <button className="btn btn-dark"><i className="fa-regular fa-pen-to-square"></i></button></NavLink>
       <button className="btn btn-dark" onClick={() => deleteuser(element._id)}><i className="fa-regular fa-trash-can"></i></button>
       </td>
 
@@ -185,12 +179,7 @@ const deleteuser = async (id) => {
         )
      })}
 
-    
-
-     
-  
- 
-  </tbody>
+</tbody>
 </table>
 <button className="btn btn-dark"  onClick={generatePDF}>Generate Report</button>
 </div>
