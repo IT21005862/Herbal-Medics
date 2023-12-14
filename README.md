@@ -1,9 +1,7 @@
 # Herbal-Medics
-# DS Assignment 01 - Y3.S1.WE.0101_GRP40
-# <B>Group Members</B> : 
+>This project Gives The basic idea on micro services, kubernetes and docker
+>>Technologies used – Mongo DB, React, Node Js,
+Express, Docker, Kubernetes
+>>>Pls check on docker and kubernetes on this document
 
-# IT21005862 - Ruwanara H.D.C
-# IT21013300 - Kottage N.V.H
-# IT21073946 - Jayasena A.K.B.D
-# IT21021916 - Panditharathne P.D.R.L
-# 
+![HerbalMedics](https://github.com/KOTTAGENVH/Herbal-Medics/assets/87430226/9980a54b-fb07-4bca-b745-1748ab618195)
