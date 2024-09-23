@@ -4,7 +4,7 @@ const app = express();
 const http = require('http');
 require('dotenv').config();
 const Stripe = require('stripe');  //Payment gateway stripe is being integrated
-const stripe = Stripe('sk_test_51LhBwPD1ftP7zi2EFzCqknBRwERKsNxtKCEJGL7I6ng3mSy6nOAW8kSIz8ivpxVXBpGfcObm7cRCFzqh1rIHcDYR00VAPeCQ9k'); //Stripe client key
+const stripe = Stripe('Your Strip Key'); //Stripe client key
 // secret key on top
 const server = http.createServer(app);
 const {Server} = require('socket.io');
